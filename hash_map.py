@@ -36,5 +36,6 @@ hash_map["pamela"] = 16
 
 print(hash_map["pritchard"], hash_map["promise"], hash_map["pamela"])
 
-for i in hash_map.arr:
-    print(i)
+del hash_map["promise"]
+
+print(hash_map.arr)
