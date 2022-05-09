@@ -78,7 +78,7 @@ class HashMap:
                 return
             new_index = (new_index + 1) % self.len()
 
-
+ # Test drive
 hasht = HashMap()
 
 hasht["march 17"] = 7
