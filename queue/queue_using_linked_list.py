@@ -5,9 +5,9 @@ first is also the first to come out.
 
 A real life example of a queue is the queue at a bank where the first person 
 to enter into the queue is the first to be served hence the first to get out 
-of the queue. In this implementation, insertion/pushing is done at the end of the queue and 
-deletion/ popping is done at the beginning of the queue. To allow our queue to be efficient,
-it will maintain the heard and the tail pointers in order to allow for fast pop and push respectively. 
+of the queue. In this implementation, insertion/enqueing is done at the end of the queue and 
+deletion/ dequeing is done at the beginning of the queue. To allow our queue to be efficient,
+it will maintain the heard and the tail pointers in order to allow for fast dequeue and enqueue respectively. 
 Insertion should be done at a constant time (O(1)) as well as deletion. To maintain this property,
 the tail pointer points to the end of the queue and will be updated accordingly at insertion,
 otherwise insertion would take O(n) since we would have to traverse through each element
@@ -31,7 +31,7 @@ class Queue:
     def length(self) ->int:
         return self._size
     
-    def push(self, data:int)->None:
+    def enqueue(self, data:int)->None:
         # First create a data item object
         data_item = DataItem()
         data_item.data = data
@@ -44,8 +44,8 @@ class Queue:
             self.tail = data_item
             self._size += 1
     
-    def pop(self) ->DataItem().data:
-        # first check if the stack is not empty before popping
+    def dequeue(self) ->DataItem().data:
+        # first check if the stack is not empty before dequeueping
         if self.is_empty():
             print("The queue is empty!")
             return
@@ -61,7 +61,7 @@ class Queue:
         if self.is_empty():
             print("The queue is empty!")
             return
-        return self.head.data   # return the data item that is elegible for a pop
+        return self.head.data   # return the data item that is elegible for a dequeue
 
 #______________________________________________________________________________
 
@@ -69,18 +69,18 @@ class Queue:
 
 queue = Queue()
 
-queue.pop()
+queue.dequeue()
 print(queue.length())
 print(queue.is_empty())
 print("============================================================================")
-queue.push(11)
-queue.push(12)
-queue.push(13)
-queue.push(14)
-queue.push(15)
-queue.push(16)
-queue.push(17)
-queue.push(18)
+queue.enqueue(11)
+queue.enqueue(12)
+queue.enqueue(13)
+queue.enqueue(14)
+queue.enqueue(15)
+queue.enqueue(16)
+queue.enqueue(17)
+queue.enqueue(18)
 
 print(queue.length())
 print(queue.is_empty())
@@ -88,11 +88,11 @@ print(queue.peek())
 
 print("============================================================================")
 
-print("Pop time ...")
-print(queue.pop())
-print(queue.pop())
-print(queue.pop())
-print(queue.pop())
+print("dequeue time ...")
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
 
 print("============================================================================")
 
