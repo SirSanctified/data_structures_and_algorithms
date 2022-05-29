@@ -48,17 +48,18 @@ class BinaryTree:
         print(root.data)
 
 
-bt = BinaryTree()
-bt.root = bt.create()
-print('============================================================================\n')
-print('How do you want your data to be printed?\n1.Preorder\n2.Inorder\n3.Postorder')
-ch = int(input())
-print('____________________________________________________________')
-if ch == 1:
-    bt.preorder(bt.root)
-elif ch == 2:
-    bt.inorder(bt.root)
-elif ch == 3:
-    bt.postorder(bt.root)
-else:
-    print('Invalid option')
+if __name__ == '__main__':
+    bt = BinaryTree()
+    bt.root = bt.create()
+    print('============================================================================\n')
+    print('How do you want your data to be printed?\n1.Preorder\n2.Inorder\n3.Postorder')
+    ch = int(input())
+    print('____________________________________________________________')
+    if ch == 1:
+        bt.preorder(bt.root)
+    elif ch == 2:
+        bt.inorder(bt.root)
+    elif ch == 3:
+        bt.postorder(bt.root)
+    else:
+        print('Invalid option')
