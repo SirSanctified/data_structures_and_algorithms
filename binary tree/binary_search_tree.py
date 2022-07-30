@@ -82,7 +82,7 @@ class BST:
 
 if __name__ == '__main__':
 
-    dt = input("Enter the root data: ")
+    dt = int(input("Enter the root data: "))
     root = BST(dt)
 
 
